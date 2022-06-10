@@ -1,9 +1,11 @@
+@use 'styles/variables';
+
 html, body {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: variables.$color-white;
 }
 
 .flex {
@@ -16,4 +18,23 @@ html, body {
   &.center {
     justify-items: center;
   }
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: variables.$font-size-md;
+  box-sizing: border-box;
+}
+
+.h1 {
+  font-size: variables.$font-size-lg;
+  font-weight: 700;
+}
+
+p, span {
+  color: variables.$color-secondary;
+}
+
+p {
+  margin: 2px;
 }
