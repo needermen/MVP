@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-rows: 80px 1fr 100px;
+  grid-template-columns: 100px 1fr;
+  height: 100%;
+}
+
+.sidebar {
+  grid-area: 2 / 1 / span 2 / span 1;
+}
+
+.header {
+  grid-area: 1 / 1 / span 1 / span 2;
+  padding-right: 100px;
+}
+
+.content {
+  grid-area: 2 / 2;
+  overflow: scroll;
+}
+
+.footer {
+  grid-area: 3 / 2;
+  padding-bottom: 22px;
+}
