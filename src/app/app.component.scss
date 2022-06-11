@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-template-rows: 80px 1fr 100px;
+  grid-template-rows: 80px 1fr 60px;
   grid-template-columns: 100px 1fr;
   height: 100%;
 }
@@ -11,15 +11,15 @@
 
 .header {
   grid-area: 1 / 1 / span 1 / span 2;
-  padding-right: 100px;
+  border-bottom: 2px solid #F3F6F9;
 }
 
 .content {
   grid-area: 2 / 2;
   overflow: scroll;
+  padding: 33px 100px 0 0;
 }
 
 .footer {
   grid-area: 3 / 2;
-  padding-bottom: 22px;
 }

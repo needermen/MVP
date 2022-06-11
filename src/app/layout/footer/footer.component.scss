@@ -1,0 +1,11 @@
+ @use 'variables';
+
+.footer {
+  display: flex;
+  align-items: center;
+
+  .terms {
+    font-size: 16px;
+    color: variables.$color-primary;
+  }
+}

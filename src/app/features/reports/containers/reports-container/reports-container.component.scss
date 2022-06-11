@@ -1,0 +1,13 @@
+.reports {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  div:first-child {
+    height: 80px;
+  }
+
+  &__empty {
+    margin-top: 150px;
+  }
+}
