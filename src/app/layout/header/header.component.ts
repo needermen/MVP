@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {UserDataService} from "../../user/user-data.service";
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,9 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
+  user$ = this.userDataService.getFirst();
 
-  constructor() { }
+  constructor(private readonly userDataService: UserDataService) { }
 
   ngOnInit(): void {
   }

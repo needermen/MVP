@@ -4,12 +4,12 @@
   </a>
   <img class="pointer" src="/assets/icons/burger-menu.svg" alt="LOGO">
 
-  <div class="user-info">
+  <div class="user-info" *ngIf="user$ | async as user">
     <div class="user-info__initials">
-      <span>JD</span>
+      <span>{{ user.firstName[0] + user.lastName[0] }}</span>
     </div>
     <span class="user-info__name">
-        John Doe
+        {{ user.firstName + ' ' + user.lastName }}
     </span>
   </div>
 </div>
