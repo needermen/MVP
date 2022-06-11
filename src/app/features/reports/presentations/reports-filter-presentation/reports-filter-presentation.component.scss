@@ -4,18 +4,16 @@
   display: flex;
 
   div {
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: variables.$color-white ;
-    font-size: variables.$font-size-sm;
-  }
-
-  div:not(last-child) {
     margin-right: 10px;
-    background-color: variables.$color-green;
   }
+}
 
-  div:last-child {
-    background-color: variables.$color-primary;
-  }
+button.generate {
+  border: unset;
+  border-radius: 5px;
+  padding: 8px 13px;
+  color: variables.$color-white;
+  font-size: variables.$font-size-sm;
+  background-color: variables.$color-primary;
+  cursor: pointer;
 }

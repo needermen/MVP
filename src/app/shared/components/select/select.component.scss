@@ -1,0 +1,10 @@
+@use 'variables';
+
+select {
+  background: #1BC5BD;
+  border: unset;
+  border-radius: 5px;
+  padding: 8px 13px;
+  font-size: variables.$font-size-sm;
+  color: variables.$color-white;
+}

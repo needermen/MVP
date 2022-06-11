@@ -9,6 +9,8 @@ import { ReportsFilterPresentationComponent } from './presentations/reports-filt
 import { ReportsEmptyPresentationComponent } from './presentations/reports-empty-presentation/reports-empty-presentation.component';
 import { ReportItemPresentationComponent } from './presentations/report-item-presentation/report-item-presentation.component';
 import { ReportGatewayChartPresentationComponent } from './presentations/report-gateway-chart-presentation/report-gateway-chart-presentation.component';
+import {SharedModule} from "../../shared/shared.module";
+import { ReportsFilterContainerComponent } from './containers/reports-filter-container/reports-filter-container.component';
 
 
 @NgModule({
@@ -19,11 +21,13 @@ import { ReportGatewayChartPresentationComponent } from './presentations/report-
     ReportsFilterPresentationComponent,
     ReportsEmptyPresentationComponent,
     ReportItemPresentationComponent,
-    ReportGatewayChartPresentationComponent
+    ReportGatewayChartPresentationComponent,
+    ReportsFilterContainerComponent
   ],
   imports: [
     CommonModule,
-    ReportsRoutingModule
+    ReportsRoutingModule,
+    SharedModule
   ]
 })
 export class ReportsModule { }

@@ -1,7 +1,10 @@
 <div class="filters">
-  <div>Project</div>
-  <div>Gateway</div>
-  <div>From date</div>
-  <div>To date</div>
-  <div>Generate</div>
+  <div>
+    <app-shared-select [data]="projectItems" label="Select project"></app-shared-select>
+  </div>
+  <div>
+    <app-shared-select [data]="gatewayItems" label="Select gateway"></app-shared-select>
+  </div>
+
+  <button class="generate">Generate</button>
 </div>
