@@ -1,0 +1,11 @@
+@use 'variables';
+
+input {
+  background: variables.$color-green;
+  border-radius: 5px;
+  border: unset;
+  padding: 8px 12px 8px 13px;
+  font-size: variables.$font-size-sm;
+  color: variables.$color-white;
+  outline: none;
+}

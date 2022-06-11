@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SelectItem} from "../../entity/select-item";
+import {InputBaseComponent} from "../input-base.component";
 
 @Component({
   selector: 'app-shared-select',
@@ -7,7 +8,7 @@ import {SelectItem} from "../../entity/select-item";
   styleUrls: ['./select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SelectComponent {
+export class SelectComponent extends InputBaseComponent<string>{
   @Input() data: SelectItem[] | undefined
   @Input() label: string | undefined;
 

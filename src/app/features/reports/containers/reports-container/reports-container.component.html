@@ -4,12 +4,16 @@
     <app-reports-filter-container></app-reports-filter-container>
   </div>
 
-  <div class="reports__empty">
-    <app-reports-empty-presentation></app-reports-empty-presentation>
-  </div>
-</div>
+  <ng-container *ngIf="reports$ | async as reports; else emptyReports">
+    <div class="flex between">
+      <app-reports-presentation></app-reports-presentation>
+      <app-report-gateway-chart-presentation></app-report-gateway-chart-presentation>
+    </div>
+  </ng-container>
 
-<!--<div class="flex between">-->
-<!--  <app-reports-presentation></app-reports-presentation>-->
-<!--  <app-report-gateway-chart-presentation></app-report-gateway-chart-presentation>-->
-<!--</div>-->
+  <ng-template #emptyReports>
+    <div class="reports__empty">
+      <app-reports-empty-presentation></app-reports-empty-presentation>
+    </div>
+  </ng-template>
+</div>

@@ -1,7 +1,9 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Project} from "../../entity/project";
 import {Gateway} from "../../entity/gateway";
 import {SelectItem} from "../../../../shared/entity/select-item";
+import {ReportFilter} from "../../entity/report-filter";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-reports-filter-presentation',
@@ -9,7 +11,8 @@ import {SelectItem} from "../../../../shared/entity/select-item";
   styleUrls: ['./reports-filter-presentation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportsFilterPresentationComponent implements OnInit {
+export class ReportsFilterPresentationComponent {
+  form: FormGroup;
   projectItems: SelectItem[];
   gatewayItems: SelectItem[]
 
@@ -25,10 +28,18 @@ export class ReportsFilterPresentationComponent implements OnInit {
     }) ?? []]
   }
 
-  constructor() {
+  @Output() generateReport = new EventEmitter<ReportFilter>();
+
+  constructor(private readonly fb: FormBuilder) {
+    this.form = this.fb.group({
+      projectId: [''],
+      gatewayId: [''],
+      from: [''],
+      to: ['']
+    })
   }
 
-  ngOnInit(): void {
+  generate() {
+    this.generateReport.emit(this.form.value)
   }
-
 }

@@ -1,10 +1,16 @@
-<div class="filters">
+<div class="filters" [formGroup]="form">
   <div>
-    <app-shared-select [data]="projectItems" label="Select project"></app-shared-select>
+    <app-shared-select formControlName="projectId" [data]="projectItems" label="Select project"></app-shared-select>
   </div>
   <div>
-    <app-shared-select [data]="gatewayItems" label="Select gateway"></app-shared-select>
+    <app-shared-select formControlName="gatewayId" [data]="gatewayItems" label="Select gateway"></app-shared-select>
+  </div>
+  <div>
+    <app-date-picker formControlName="from"></app-date-picker>
+  </div>
+  <div>
+    <app-date-picker formControlName="to"></app-date-picker>
   </div>
 
-  <button class="generate">Generate</button>
+  <button class="generate" (click)="generate()">Generate</button>
 </div>

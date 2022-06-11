@@ -1,4 +1,4 @@
-<select [name]="label" [id]="label">
+<select [(ngModel)]="value" (change)="onChange(value)" [name]="label" [id]="label">
   <option value=""> {{label}} </option>
   <option *ngFor="let item of data" [value]="item.key">
     {{ item.label }}
