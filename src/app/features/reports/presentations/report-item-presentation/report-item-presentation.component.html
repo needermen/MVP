@@ -1,26 +1,26 @@
-<div class="report-item flex between align-center pointer" (click)="showPayments = !showPayments">
+<div class="report-item flex between align-center pointer" *ngIf="showHeadline" (click)="showPayments = !showPayments">
   <div class="report-item__title h3">
-    Project 1
+    {{ reportSummary.title }}
   </div>
   <div class="report-item__total h3">
-    TOTAL: 10,065 USD
+    TOTAL: {{ reportSummary.total | number :'1.0-0' }} USD
   </div>
 </div>
 
-<div class="payments" *ngIf="showPayments">
+<div class="payments" *ngIf="showPayments || !showHeadline">
   <table>
     <tr>
       <th class="text-left">Date</th>
-      <th class="text-center">Gateway</th>
+      <th *ngIf="showGatewayColumn" class="text-center">Gateway</th>
       <th class="text-center">Transaction ID</th>
       <th class="text-right">Amount</th>
     </tr>
 
-    <tr *ngFor="let payment of reports">
-      <td class="text-left"> {{ payment.created }}</td>
-      <td class="text-center"> {{ payment.gatewayId }}</td>
+    <tr *ngFor="let payment of reportSummary.payments">
+      <td class="text-left"> {{ payment.created | date : 'dd/MM/yyyy' }}</td>
+      <td *ngIf="showGatewayColumn" class="text-center"> {{ payment.gateway }}</td>
       <td class="text-center"> {{ payment.paymentId }} </td>
-      <td class="text-right"> {{ payment.amount }}</td>
+      <td class="text-right"> {{ payment.amount | number :'1.0-0' }} USD </td>
     </tr>
   </table>
 </div>

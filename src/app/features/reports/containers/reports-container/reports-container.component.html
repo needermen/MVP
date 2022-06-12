@@ -4,20 +4,24 @@
     <app-reports-filter-container></app-reports-filter-container>
   </div>
 
-  <ng-container *ngIf="reports$ | async as reports; else emptyReports">
-    <div class="report-result flex between">
+  <ng-container *ngIf="reports$ | async as reports;  else emptyReports">
+    <div class="report-result flex between" *ngIf="reports.reports?.length; else emptyReports">
       <div class="payments">
         <app-reports-presentation [reports]="reports"></app-reports-presentation>
       </div>
-<!--      <div class="charts">-->
-<!--        <app-report-gateway-chart-presentation></app-report-gateway-chart-presentation>-->
-<!--      </div>-->
+      <!--      <div class="charts">-->
+      <!--        <app-report-gateway-chart-presentation></app-report-gateway-chart-presentation>-->
+      <!--      </div>-->
     </div>
   </ng-container>
+
+
+
 
   <ng-template #emptyReports>
     <div class="reports__empty">
       <app-reports-empty-presentation></app-reports-empty-presentation>
     </div>
   </ng-template>
+
 </div>

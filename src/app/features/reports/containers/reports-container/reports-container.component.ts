@@ -10,7 +10,8 @@ import {ReportsFacade} from "../../facade/reports.facade";
 export class ReportsContainerComponent implements OnInit {
   reports$ = this.reportsFacade.reports$;
 
-  constructor(private readonly reportsFacade: ReportsFacade) { }
+  constructor(private readonly reportsFacade: ReportsFacade,) {
+  }
 
   ngOnInit(): void {
   }

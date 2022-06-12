@@ -1,7 +1,6 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ProjectsService} from "../../infrastructure/projects.service";
 import {GatewaysService} from "../../infrastructure/gateways.service";
-import {ReportsService} from "../../infrastructure/reports.service";
 import {ReportsFacade} from "../../facade/reports.facade";
 import {ReportFilter} from "../../entity/report-filter";
 
@@ -25,3 +24,4 @@ export class ReportsFilterContainerComponent {
   }
 
 }
+

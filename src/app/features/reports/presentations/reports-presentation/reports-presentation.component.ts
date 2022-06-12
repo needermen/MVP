@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {Report} from "../../entity/report";
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {Reports} from "../../entity/payment";
 
 @Component({
   selector: 'app-reports-presentation',
@@ -7,12 +7,7 @@ import {Report} from "../../entity/report";
   styleUrls: ['./reports-presentation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportsPresentationComponent implements OnInit {
-  @Input() reports: Report[];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ReportsPresentationComponent {
+  @Input() reports: Reports;
 }
+

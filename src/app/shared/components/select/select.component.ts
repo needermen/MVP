@@ -9,8 +9,8 @@ import {InputBaseComponent} from "../input-base.component";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectComponent extends InputBaseComponent<string>{
-  @Input() data: SelectItem[] | undefined
-  @Input() label: string | undefined;
+  @Input() data: SelectItem[];
+  @Input() label: string;
 
   @Output() selected = new EventEmitter<string>();
 }

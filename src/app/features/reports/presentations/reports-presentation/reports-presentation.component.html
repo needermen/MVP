@@ -1,13 +1,17 @@
 <div class="reports">
   <p class="reports__title h3">
-    Project 1 | Gateway 1
+    {{ reports.title }}
   </p>
 
-  <!--  <div *ngFor="let i of reports">-->
-  <app-report-item-presentation [reports]="reports"></app-report-item-presentation>
-  <!--  </div>-->
+  <div *ngFor="let report of reports.reports; let i=index;">
+    <app-report-item-presentation [reportSummary]="report"
+                                  [showHeadline]="reports.reports.length > 1"
+                                  [showPayments]="i===0"
+                                  [showGatewayColumn]="reports.showGatewayColumn">
+    </app-report-item-presentation>
+  </div>
 </div>
 
 <p class="reports__total h3">
-  TOTAL: 14,065 USD
+  TOTAL: {{ reports.total | number :'1.0-0' }} USD
 </p>

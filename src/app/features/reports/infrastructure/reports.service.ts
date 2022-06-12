@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ReportFilter} from "../entity/report-filter";
-import {Report} from "../entity/report";
+import {Payment} from "../entity/payment";
 import {environment} from "../../../../environments/environment";
 import {map, Observable, tap} from "rxjs";
 
@@ -13,8 +13,8 @@ export class ReportsService {
   constructor(private readonly http: HttpClient) {
   }
 
-  get(filter: ReportFilter): Observable<Report[]> {
-    return this.http.post<{ data: Report[] }>(`${environment.api}/report`, filter)
-      .pipe(map(res => res.data), tap(console.log))
+  get(filter: ReportFilter): Observable<Payment[]> {
+    return this.http.post<{ data: Payment[] }>(`${environment.api}/report`, filter)
+      .pipe(map(res => res.data))
   }
 }

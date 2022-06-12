@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {Report} from "../../entity/report";
+import {Payment, ReportItem, Reports} from "../../entity/payment";
 
 @Component({
   selector: 'app-report-item-presentation',
@@ -8,9 +8,11 @@ import {Report} from "../../entity/report";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReportItemPresentationComponent implements OnInit {
-  showPayments = false;
+  @Input() showPayments = false;
+  @Input() showHeadline = true;
+  @Input() showGatewayColumn = true;
 
-  @Input() reports: Report[]
+  @Input() reportSummary: ReportItem;
 
   constructor() { }
 

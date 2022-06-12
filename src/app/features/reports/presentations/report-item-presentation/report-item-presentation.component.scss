@@ -30,6 +30,14 @@ table {
     height: 35px;
   }
 
+  tr td:first-child,th:first-child {
+    padding-left: 6px;
+  }
+
+  tr td:last-child,th:last-child {
+    padding-right: 24px;
+  }
+
   tr:nth-child(odd) {
     background: variables.$color-white;
   }
