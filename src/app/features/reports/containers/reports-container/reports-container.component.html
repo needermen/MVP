@@ -5,17 +5,18 @@
   </div>
 
   <ng-container *ngIf="reports$ | async as reports;  else emptyReports">
-    <div class="report-result flex between" *ngIf="reports.reports?.length; else emptyReports">
+    <div *ngIf="reports.reports?.length; else emptyReports" class="report-result flex between">
       <div class="payments">
         <app-reports-presentation [reports]="reports"></app-reports-presentation>
       </div>
-      <!--      <div class="charts">-->
-      <!--        <app-report-gateway-chart-presentation></app-report-gateway-chart-presentation>-->
-      <!--      </div>-->
+      <div *ngIf="reports.showChart" class="charts">
+        <app-report-gateway-chart-presentation [report]="reports.reports"
+                                               [title]="reports.chartTitle"
+                                               [total]="reports.total">
+        </app-report-gateway-chart-presentation>
+      </div>
     </div>
   </ng-container>
-
-
 
 
   <ng-template #emptyReports>

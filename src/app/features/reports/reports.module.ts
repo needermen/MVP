@@ -24,6 +24,7 @@ import {
   ReportsFilterContainerComponent
 } from './containers/reports-filter-container/reports-filter-container.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {NgChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     ReportsRoutingModule,
     SharedModule,
+    NgChartsModule,
     ReactiveFormsModule
   ]
 })

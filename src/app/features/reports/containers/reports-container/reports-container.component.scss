@@ -14,11 +14,14 @@
 
 
 .report-result {
+  height: 100%;
+
   .payments {
     flex: 60% 1 1;
   }
 
   .charts {
     flex: 40% 1 1;
+    margin-left: 30px;
   }
 }

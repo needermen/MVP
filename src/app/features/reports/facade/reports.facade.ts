@@ -42,7 +42,9 @@ export class ReportsFacade {
             title: selectedProjectName + ' | ' + selectedGatewayName,
             total: this.calculateSum(reports),
             reports: [],
-            showGatewayColumn: !(!!filter.projectId || !!filter.gatewayId)
+            showGatewayColumn: !(!!filter.projectId || !!filter.gatewayId),
+            showChart: !(filter.projectId && filter.gatewayId) && !!(filter.projectId || filter.gatewayId),
+            chartTitle: filter.projectId ? 'Gateway' : 'Project'
           };
 
           if (filter.projectId && filter.gatewayId) {
@@ -54,7 +56,6 @@ export class ReportsFacade {
             } as ReportItem
 
             finalReport.reports.push(reportItem);
-
           } else if (filter.projectId) {
             // group by gateway
             gateways.forEach(g => {

@@ -5,9 +5,8 @@
 
   <div *ngFor="let report of reports.reports; let i=index;">
     <app-report-item-presentation [reportSummary]="report"
-                                  [showHeadline]="reports.reports.length > 1"
-                                  [showPayments]="i===0"
-                                  [showGatewayColumn]="reports.showGatewayColumn">
+                                  [showGatewayColumn]="reports.showGatewayColumn"
+                                  [showHeadline]="reports.reports.length > 1">
     </app-report-item-presentation>
   </div>
 </div>

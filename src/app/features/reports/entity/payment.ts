@@ -20,7 +20,7 @@ export interface Reports {
   total: number;
   reports: ReportItem[];
   showGatewayColumn: boolean;
+  showChart?: boolean;
+  chartTitle?: string;
 }
-
-
 

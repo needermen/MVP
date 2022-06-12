@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ReportsFacade} from "../../facade/reports.facade";
 
 @Component({
@@ -7,13 +7,9 @@ import {ReportsFacade} from "../../facade/reports.facade";
   styleUrls: ['./reports-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportsContainerComponent implements OnInit {
+export class ReportsContainerComponent {
   reports$ = this.reportsFacade.reports$;
 
-  constructor(private readonly reportsFacade: ReportsFacade,) {
+  constructor(private readonly reportsFacade: ReportsFacade) {
   }
-
-  ngOnInit(): void {
-  }
-
 }
