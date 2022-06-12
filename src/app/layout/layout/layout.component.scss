@@ -1,0 +1,59 @@
+.grid {
+  display: grid;
+  grid-template-rows: 80px 1fr 60px;
+  grid-template-columns: 100px 1fr;
+  height: 100%;
+}
+
+.sidebar {
+  grid-area: 2 / 1 / span 2 / span 1;
+  animation: slideIn 1s ease-in-out;
+
+  &.hidden {
+    animation: slideOut 1s ease-in-out;
+    transform: translateX(-100%);
+  }
+}
+
+.header {
+  grid-area: 1 / 1 / span 1 / span 2;
+  border-bottom: 2px solid #F3F6F9;
+}
+
+.content {
+  grid-area: 2 / 2;
+  overflow: scroll;
+  padding: 33px 100px 0 0;
+
+  &.full {
+    grid-area: 2 / 1 / span 2 / span 2;
+  }
+}
+
+.footer {
+  grid-area: 3 / 2;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-80%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

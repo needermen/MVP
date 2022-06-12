@@ -7,13 +7,15 @@ import {HeaderComponent} from './layout/header/header.component';
 import {FooterComponent} from './layout/footer/footer.component';
 import {SidebarComponent} from './layout/sidebar/sidebar.component';
 import {HttpClientModule} from "@angular/common/http";
+import {LayoutComponent} from './layout/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

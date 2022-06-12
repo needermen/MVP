@@ -1,11 +1,34 @@
 @use 'variables';
 
-input {
+.wrapper {
+  height: 100%;
+  position: relative;
   background: variables.$color-green;
   border-radius: 5px;
-  border: unset;
-  padding: 8px 12px 8px 13px;
   font-size: variables.$font-size-sm;
   color: variables.$color-white;
+}
+
+input {
+  position: relative;
+  background: transparent;
+  border: unset;
+  padding: 6px 12px 12px 13px;
   outline: none;
+  border-radius: inherit;
+  color: inherit;
+}
+
+.label {
+  background: variables.$color-green;
+  width: 77%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 6px 12px 12px 13px;
 }

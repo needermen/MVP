@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-reports-empty-presentation',
@@ -6,11 +6,6 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   styleUrls: ['./reports-empty-presentation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportsEmptyPresentationComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class ReportsEmptyPresentationComponent {
 
 }

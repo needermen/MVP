@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {Reports} from "../../entity/payment";
+import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+
+import {Report} from "../../entity";
 
 @Component({
   selector: 'app-reports-presentation',
@@ -7,7 +8,15 @@ import {Reports} from "../../entity/payment";
   styleUrls: ['./reports-presentation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportsPresentationComponent {
-  @Input() reports: Reports;
+export class ReportsPresentationComponent implements OnChanges {
+  selectedId: number = -1;
+
+  @Input() report: Report;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes["report"]?.currentValue) {
+      this.selectedId = -1
+    }
+  }
 }
 

@@ -1,5 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {UserDataService} from "../../user/user-data.service";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+
+import {UserFacade} from "@domains/user";
+import {LayoutFacade} from "../facade/layout.facade";
 
 @Component({
   selector: 'app-header',
@@ -7,12 +9,14 @@ import {UserDataService} from "../../user/user-data.service";
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
-  user$ = this.userDataService.getFirst();
+export class HeaderComponent {
+  user$ = this.userFacade.user$;
 
-  constructor(private readonly userDataService: UserDataService) { }
-
-  ngOnInit(): void {
+  constructor(private readonly userFacade: UserFacade,
+              private readonly layoutFacade: LayoutFacade) {
   }
 
+  toggleSidebar() {
+    this.layoutFacade.toggleSidebar()
+  }
 }

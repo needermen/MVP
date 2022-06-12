@@ -1,0 +1,38 @@
+@use 'variables';
+
+.wrapper {
+  width: 100%;
+  height: 555px;
+
+  .legend {
+    height: 53px;
+    width: 100%;
+    padding: 10px 23px;
+    background: #F1FAFE;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 36px;
+      }
+
+      &-color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 5px;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  canvas {
+    pointer-events: none;
+  }
+
+  .total {
+    height: 53px;
+    padding: 17px;
+    width: 100%;
+    background: #F1FAFE;
+  }
+}

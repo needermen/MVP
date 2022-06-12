@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {Payment, ReportItem, Reports} from "../../entity/payment";
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ReportItem} from "../../entity";
 
 @Component({
   selector: 'app-report-item-presentation',
@@ -7,16 +7,16 @@ import {Payment, ReportItem, Reports} from "../../entity/payment";
   styleUrls: ['./report-item-presentation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportItemPresentationComponent implements OnInit {
+export class ReportItemPresentationComponent {
   @Input() showPayments = false;
   @Input() showHeadline = true;
   @Input() showGatewayColumn = true;
+  @Input() reportItem: ReportItem;
 
-  @Input() reportSummary: ReportItem;
+  @Output() showPaymentsCommand = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  toggleShowPayments() {
+    this.showPayments = !this.showPayments;
+    this.showPaymentsCommand.emit();
   }
-
 }

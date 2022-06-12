@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {ProjectsService} from "../../infrastructure/projects.service";
-import {GatewaysService} from "../../infrastructure/gateways.service";
-import {ReportsFacade} from "../../facade/reports.facade";
-import {ReportFilter} from "../../entity/report-filter";
+
+import {ReportFacade} from "../../facade";
+import {PaymentFilter} from "../../entity";
+import {GatewaysFacade, ProjectsFacade} from "../../../../domain";
 
 @Component({
   selector: 'app-reports-filter-container',
@@ -11,15 +11,15 @@ import {ReportFilter} from "../../entity/report-filter";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReportsFilterContainerComponent {
-  projects = this.projectsService.getALl();
-  gateways = this.gatewaysService.getALl();
+  projects = this.projectsFacade.projects$;
+  gateways = this.gatewaysFacade.gateways$;
 
-  constructor(private readonly projectsService: ProjectsService,
-              private readonly gatewaysService: GatewaysService,
-              private readonly reportsFacade: ReportsFacade) {
+  constructor(private readonly projectsFacade: ProjectsFacade,
+              private readonly gatewaysFacade: GatewaysFacade,
+              private readonly reportsFacade: ReportFacade) {
   }
 
-  generateReport(filter: ReportFilter) {
+  generateReport(filter: PaymentFilter) {
     this.reportsFacade.generateReport(filter)
   }
 

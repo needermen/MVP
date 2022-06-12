@@ -1,0 +1,21 @@
+<div class="wrapper flex between align-center column">
+  <div class="legend flex align-center">
+    <div *ngFor="let item of reports;let i=index" class="legend__item">
+      <span [ngStyle]="{'background-color': colors[i]}" class="legend__item-color"></span>
+      <span class="legend__item-title"> {{ item.title }}</span>
+    </div>
+  </div>
+
+
+  <div style="display: block">
+    <canvas [data]="doughnutChartData"
+            [options]="pieChartOptions"
+            baseChart
+            type="doughnut">
+    </canvas>
+  </div>
+
+  <h3 class="total">
+    {{ title | uppercase }}  TOTAL | {{ total | number : '2.0-0' }} USD
+  </h3>
+</div>

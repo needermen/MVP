@@ -1,15 +1,15 @@
 <div class="header">
   <a href="/">
-    <img class="logo pointer" src="/assets/icons/logo.svg" alt="LOGO">
+    <img alt="LOGO" class="logo pointer" src="/assets/icons/logo.svg">
   </a>
-  <img class="pointer" src="/assets/icons/burger-menu.svg" alt="LOGO">
+  <img (click)="toggleSidebar()" alt="LOGO" class="pointer" src="/assets/icons/burger-menu.svg">
 
-  <div class="user-info" *ngIf="user$ | async as user">
+  <div *ngIf="user$ | async as user" class="user-info">
     <div class="user-info__initials">
       <span>{{ user.firstName[0] + user.lastName[0] }}</span>
     </div>
     <span class="user-info__name">
-        {{ user.firstName + ' ' + user.lastName }}
+        {{ user.firstName }} {{ user.lastName }}
     </span>
   </div>
 </div>

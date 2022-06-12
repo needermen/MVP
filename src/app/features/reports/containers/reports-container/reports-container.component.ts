@@ -1,5 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {ReportsFacade} from "../../facade/reports.facade";
+
+import {ReportFacade} from "../../facade";
+import {combineLatest, map, startWith} from "rxjs";
 
 @Component({
   selector: 'app-reports-container',
@@ -9,7 +11,18 @@ import {ReportsFacade} from "../../facade/reports.facade";
 })
 export class ReportsContainerComponent {
   reports$ = this.reportsFacade.reports$;
+  filter$ = this.reportsFacade.filter$;
 
-  constructor(private readonly reportsFacade: ReportsFacade) {
+  view = combineLatest([this.reports$.pipe(startWith(null)), this.filter$])
+    .pipe(
+      map(([reports, filter]) => {
+        return {
+          reports,
+          filter
+        }
+      })
+    )
+
+  constructor(private readonly reportsFacade: ReportFacade) {
   }
 }

@@ -1,16 +1,18 @@
 <div class="reports">
   <p class="reports__title h3">
-    {{ reports.title }}
+    {{ report.title }}
   </p>
 
-  <div *ngFor="let report of reports.reports; let i=index;">
-    <app-report-item-presentation [reportSummary]="report"
-                                  [showGatewayColumn]="reports.showGatewayColumn"
-                                  [showHeadline]="reports.reports.length > 1">
+  <div *ngFor="let item of report.items; let i=index;">
+    <app-report-item-presentation (showPaymentsCommand)="selectedId=i"
+                                  [reportItem]="item"
+                                  [showGatewayColumn]="report.showGatewayColumn"
+                                  [showHeadline]="report.showHeadline"
+                                  [showPayments]="selectedId===i">
     </app-report-item-presentation>
   </div>
 </div>
 
 <p class="reports__total h3">
-  TOTAL: {{ reports.total | number :'1.0-0' }} USD
+  TOTAL: {{ report.total | number :'1.0-0' }} USD
 </p>

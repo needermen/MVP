@@ -1,23 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SelectComponent } from './components/select/select.component';
-import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {FormsModule} from "@angular/forms";
 
-
+import {components} from "./components";
 
 @NgModule({
   declarations: [
-    SelectComponent,
-    DatePickerComponent
+    ...components
   ],
   imports: [
     CommonModule,
     FormsModule
   ],
   exports: [
-    SelectComponent,
-    DatePickerComponent
+    ...components,
+    CommonModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

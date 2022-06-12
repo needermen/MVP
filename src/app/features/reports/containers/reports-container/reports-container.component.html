@@ -4,25 +4,34 @@
     <app-reports-filter-container></app-reports-filter-container>
   </div>
 
-  <ng-container *ngIf="reports$ | async as reports;  else emptyReports">
-    <div *ngIf="reports.reports?.length; else emptyReports" class="report-result flex between">
-      <div class="payments">
-        <app-reports-presentation [reports]="reports"></app-reports-presentation>
-      </div>
-      <div *ngIf="reports.showChart" class="charts">
-        <app-report-gateway-chart-presentation [report]="reports.reports"
-                                               [title]="reports.chartTitle"
-                                               [total]="reports.total">
-        </app-report-gateway-chart-presentation>
-      </div>
-    </div>
+  <ng-container *ngIf="view | async as view">
+    <ng-container *ngIf="view.filter; else noFilter">
+      <ng-container *ngIf="view.reports">
+        <div *ngIf="view.reports.items?.length; else emptyReports" class="report-result flex between">
+          <div class="payments">
+            <app-reports-presentation [report]="view.reports"></app-reports-presentation>
+          </div>
+          <div *ngIf="view.reports.showChart" class="charts">
+            <app-report-gateway-chart-presentation [report]="view.reports.items"
+                                                   [title]="view.reports.chartTitle"
+                                                   [total]="view.reports.total">
+            </app-report-gateway-chart-presentation>
+          </div>
+        </div>
+
+        <ng-template #emptyReports>
+          <div class="reports__empty">
+            <app-reports-empty-presentation></app-reports-empty-presentation>
+          </div>
+        </ng-template>
+      </ng-container>
+    </ng-container>
   </ng-container>
 
 
-  <ng-template #emptyReports>
-    <div class="reports__empty">
-      <app-reports-empty-presentation></app-reports-empty-presentation>
+  <ng-template #noFilter>
+    <div class="reports__no-filter">
+      <app-reports-no-filter-selected></app-reports-no-filter-selected>
     </div>
   </ng-template>
-
 </div>
