@@ -1,0 +1,21 @@
+.reports {
+  background: #F1FAFE;
+  padding: 18px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 27px;
+
+  div:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+
+.reports__title {
+  margin-bottom: 33px;
+}
+
+.reports__total {
+  background: #F1FAFE;
+  padding: 17px 19px;
+}

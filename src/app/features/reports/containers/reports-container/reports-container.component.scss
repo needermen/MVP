@@ -11,3 +11,14 @@
     margin-top: 150px;
   }
 }
+
+
+.report-result {
+  .payments {
+    flex: 60% 1 1;
+  }
+
+  .charts {
+    flex: 40% 1 1;
+  }
+}

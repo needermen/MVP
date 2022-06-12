@@ -1,3 +1,13 @@
-<ng-container *ngFor="let i of [1,2,3]">
-  <app-report-item-presentation></app-report-item-presentation>
-</ng-container>
+<div class="reports">
+  <p class="reports__title h3">
+    Project 1 | Gateway 1
+  </p>
+
+  <!--  <div *ngFor="let i of reports">-->
+  <app-report-item-presentation [reports]="reports"></app-report-item-presentation>
+  <!--  </div>-->
+</div>
+
+<p class="reports__total h3">
+  TOTAL: 14,065 USD
+</p>

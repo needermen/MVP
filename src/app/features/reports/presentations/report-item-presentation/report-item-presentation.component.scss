@@ -1,0 +1,36 @@
+@use 'variables';
+
+
+.report-item {
+  height: 70px;
+  width: 100%;
+  background: variables.$color-white;
+  border-radius: 10px;
+  padding: 0 24px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 14px;
+  padding-left: 15px;
+
+  tr {
+    height: 35px;
+  }
+
+  tr:nth-child(odd) {
+    background: variables.$color-white;
+  }
+}

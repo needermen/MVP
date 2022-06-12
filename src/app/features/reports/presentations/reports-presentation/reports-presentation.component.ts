@@ -1,4 +1,5 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {Report} from "../../entity/report";
 
 @Component({
   selector: 'app-reports-presentation',
@@ -7,6 +8,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReportsPresentationComponent implements OnInit {
+  @Input() reports: Report[];
 
   constructor() { }
 
