@@ -25,7 +25,6 @@ export class ReportChartPresentationComponent {
 
   @Input() set report(items: ReportItem[]) {
     this.reports = items;
-    const total = items.reduce((partialSum, a) => partialSum + a.total, 0);
     this.doughnutChartData = {
       labels: items.map(i => i.title),
       datasets: [

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 
-import {UserFacade} from "@domains/user";
 import {LayoutFacade} from "../facade/layout.facade";
+import {UserFacade} from "../../domain";
 
 @Component({
   selector: 'app-header',
