@@ -18,7 +18,8 @@ export class PaymentFacade {
         withLatestFrom(this.userFacade.user$),
         map(([payments, user]) => {
           return payments.filter(p => p.userIds.includes(user.userId))
-        })
+        }),
+        map(payments => payments.sort((a, b) => a.created > b.created ? -1 : 1))
       )
   }
 }
