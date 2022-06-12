@@ -11,8 +11,8 @@ import {GatewaysFacade, ProjectsFacade} from "../../../../domain";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReportsFilterContainerComponent {
-  projects = this.projectsFacade.projects$;
-  gateways = this.gatewaysFacade.gateways$;
+  projects = this.projectsFacade.get();
+  gateways = this.gatewaysFacade.get();
 
   constructor(private readonly projectsFacade: ProjectsFacade,
               private readonly gatewaysFacade: GatewaysFacade,

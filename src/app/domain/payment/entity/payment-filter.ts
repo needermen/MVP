@@ -1,6 +1,6 @@
 export interface PaymentFilter {
   projectId: string,
   gatewayId: string,
-  form: string,
+  from: string,
   to: string
 }

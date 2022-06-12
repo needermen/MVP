@@ -6,11 +6,15 @@ import {shareReplay} from "rxjs";
   providedIn: 'root'
 })
 export class ProjectsFacade {
-  projects$ = this.projectService.getALl()
+  private readonly projects$ = this.projectService.getALl()
     .pipe(
       shareReplay(1)
     )
 
   constructor(private readonly projectService: ProjectsService) {
+  }
+
+  get() {
+    return this.projects$
   }
 }

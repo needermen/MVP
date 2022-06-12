@@ -6,11 +6,15 @@ import {shareReplay} from "rxjs";
   providedIn: 'root'
 })
 export class GatewaysFacade {
-  gateways$ = this.gatewaysService.getALl()
+  private readonly gateways$ = this.gatewaysService.getALl()
     .pipe(
       shareReplay(1)
     )
 
   constructor(private readonly gatewaysService: GatewaysService) {
+  }
+
+  get() {
+    return this.gateways$
   }
 }

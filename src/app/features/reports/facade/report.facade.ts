@@ -25,7 +25,7 @@ export class ReportFacade {
   getReports(filter: PaymentFilter): Observable<Report> {
     return this.paymentFacade.get(filter)
       .pipe(
-        withLatestFrom(this.gatewaysFacade.gateways$, this.projectsFacade.projects$),
+        withLatestFrom(this.gatewaysFacade.get(), this.projectsFacade.get()),
         map(([payments, gateways, projects]) => {
           const report = this.buildReportBaseDetails(filter, projects, gateways, payments);
           if (payments?.length > 0) {
