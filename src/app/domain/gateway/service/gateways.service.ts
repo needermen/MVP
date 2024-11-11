@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {map, of, Observable} from "rxjs";
 import {Gateway} from "../entity/gateway";
 import {environment} from "../../../../environments/environment";
+import { gateways } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,6 @@ export class GatewaysService {
   }
 
   getALl(): Observable<Gateway[]> {
-    return this.http.get<{ data: Gateway[] }>(`${environment.api}/gateways`)
-      .pipe(
-        map(res => res.data)
-      )
+    return of(gateways);
   }
 }

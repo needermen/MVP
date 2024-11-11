@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {from, Observable, switchMap, take} from "rxjs";
+import {from, Observable, switchMap, take, catchError, of} from "rxjs";
 import {User} from "../entity/user";
 import {environment} from "../../../../environments/environment";
+import { users } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,6 @@ export class UserService {
   }
 
   getFirst(): Observable<User> {
-    return this.http.get<{ data: User[] }>(`${environment.api}/users`)
-      .pipe(
-        switchMap(res => from(res.data)),
-        take(1)
-      )
+    return of(users[0]);
   }
 }

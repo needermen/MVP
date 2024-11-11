@@ -3,7 +3,8 @@ import {HttpClient} from "@angular/common/http";
 
 import {Payment, PaymentFilter} from "../entity";
 import {environment} from "../../../../environments/environment";
-import {map, Observable} from "rxjs";
+import {map, of, Observable} from "rxjs";
+import { payments } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,6 @@ export class PaymentsService {
   }
 
   get(filter: PaymentFilter): Observable<Payment[]> {
-    return this.http.post<{ data: Payment[] }>(`${environment.api}/report`, filter)
-      .pipe(map(res => res.data))
+    return of(payments)
   }
 }

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {map, Observable, of} from "rxjs";
 
 import {Project} from "../entity";
-import {environment} from "../../../../environments/environment";
+import { projects } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,6 @@ export class ProjectsService {
   }
 
   getALl(): Observable<Project[]> {
-    return this.http.get<{ data: Project[] }>(`${environment.api}/projects`)
-      .pipe(
-        map(res => res.data)
-      )
+    return of(projects);
   }
 }
