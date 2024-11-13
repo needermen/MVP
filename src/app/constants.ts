@@ -13,10 +13,10 @@ export const users = [
 
 export const projects: Project[] = [
   {
-    projectId: "proj_002",
+    projectId: "proj_001",
     userIds: ['user_001', '2'],
     name: 'Project Alpha',
-    gatewayIds: ['gw_001', 'gw_002'],
+    gatewayIds: ['gw_001', 'gw_002', 'gw_003', 'gw_004', 'gw_005'],
     rule: 'Rule 1',
     structure: 'Structure 1',
     industry: 'Industry 1',
@@ -25,10 +25,10 @@ export const projects: Project[] = [
     image: 'https://example.com/images/project-alpha.png'
   },
   {
-    projectId: "proj_003",
+    projectId: "proj_002",
     userIds: ['user_001', '3'],
     name: 'Project Beta',
-    gatewayIds: ['gw_003'],
+    gatewayIds: ['gw_001', 'gw_002', 'gw_003', 'gw_004', 'gw_005'],
     rule: 'Rule 2',
     structure: 'Structure 2',
     industry: 'Industry 2',
@@ -37,10 +37,10 @@ export const projects: Project[] = [
     image: 'https://example.com/images/project-beta.png'
   },
   {
-    projectId: "proj_001",
+    projectId: "proj_003",
     userIds: ['user_001', '3'],
     name: 'Project Gamma',
-    gatewayIds: ['gw_001', 'gw_003'],
+    gatewayIds: ['gw_001', 'gw_002', 'gw_003', 'gw_004', 'gw_005'],
     rule: 'Rule 3',
     structure: 'Structure 3',
     industry: 'Industry 3',
@@ -62,14 +62,6 @@ export const gateways: Gateway[] = [
   },
   {
     gatewayId: "gw_002",
-    userIds: ["user_001"],
-    name: "Auth0 Authentication",
-    type: "authentication",
-    apiKey: "auth0_key_abcdef123456",
-    description: "Main authentication service for user management"
-  },
-  {
-    gatewayId: "gw_003",
     userIds: ["user_001", "user_004", "user_005"],
     name: "Twilio Messaging",
     type: "messaging",
@@ -78,7 +70,7 @@ export const gateways: Gateway[] = [
     description: "SMS and voice communication gateway"
   },
   {
-    gatewayId: "gw_004",
+    gatewayId: "gw_003",
     userIds: ["user_001", "user_003"],
     name: "SendGrid Email",
     type: "messaging",
@@ -86,7 +78,7 @@ export const gateways: Gateway[] = [
     description: "Email delivery and management service"
   },
   {
-    gatewayId: "gw_005",
+    gatewayId: "gw_004",
     userIds: ["user_001"],
     name: "PayPal Gateway",
     type: "payment",
@@ -124,7 +116,7 @@ export const payments: Payment[] = [
     amount: 3750.50,
     projectId: "proj_002",
     project: "Mobile App Development",
-    gatewayId: "gw_005", // PayPal Gateway
+    gatewayId: "gw_003", // PayPal Gateway
     gateway: "PayPal Gateway",
     userIds: ["user_001"],
     created: "2024-02-16T10:15:00.000Z"
@@ -134,7 +126,7 @@ export const payments: Payment[] = [
     amount: 950.75,
     projectId: "proj_001",
     project: "Website Redesign",
-    gatewayId: "gw_001", // Stripe Payment Gateway
+    gatewayId: "gw_003", // Stripe Payment Gateway
     gateway: "Stripe Payment Gateway",
     userIds: ["user_001"],
     created: "2024-02-17T14:20:00.000Z"
@@ -144,7 +136,7 @@ export const payments: Payment[] = [
     amount: 2800.00,
     projectId: "proj_003",
     project: "SEO Optimization",
-    gatewayId: "gw_005", // PayPal Gateway
+    gatewayId: "gw_003", // PayPal Gateway
     gateway: "PayPal Gateway",
     userIds: ["user_001"],
     created: "2024-02-18T09:45:00.000Z"
@@ -162,7 +154,7 @@ export const payments: Payment[] = [
   {
     paymentId: "py_006",
     amount: 4500.00,
-    projectId: "proj_004",
+    projectId: "proj_001",
     project: "Cloud Migration",
     gatewayId: "gw_001", // Stripe Payment Gateway
     gateway: "Stripe Payment Gateway",
@@ -174,7 +166,7 @@ export const payments: Payment[] = [
     amount: 3200.75,
     projectId: "proj_003",
     project: "SEO Optimization",
-    gatewayId: "gw_005", // PayPal Gateway
+    gatewayId: "gw_002", // PayPal Gateway
     gateway: "PayPal Gateway",
     userIds: ["user_001"],
     created: "2024-02-21T13:25:00.000Z"
