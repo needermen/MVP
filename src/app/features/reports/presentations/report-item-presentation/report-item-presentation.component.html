@@ -12,7 +12,6 @@
     <tr>
       <th class="text-left">Date</th>
       <th *ngIf="showGatewayColumn" class="text-center">Gateway</th>
-      <th class="text-center">Transaction ID</th>
       <th class="text-right">UserId</th>
       <th class="text-right">Amount</th>
     </tr>
@@ -20,7 +19,6 @@
     <tr *ngFor="let payment of reportItem.payments">
       <td class="text-left"> {{ payment.created | date : 'dd/MM/yyyy' }}</td>
       <td *ngIf="showGatewayColumn" class="text-center"> {{ payment.gateway }}</td>
-      <td class="text-center"> {{ payment.paymentId }} </td>
       <td class="text-center"> {{ payment.userIds }} </td>
       <td class="text-right"> {{ payment.amount | number :'1.0-0' }} USD</td>
     </tr>
