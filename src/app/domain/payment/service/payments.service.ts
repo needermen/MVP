@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {Payment, PaymentFilter} from "../entity";
 import {environment} from "../../../../environments/environment";
-import {map, of, Observable, toArray, filter, from} from "rxjs";
+import {map, of, Observable} from "rxjs";
 import { payments } from '../../../constants';
 
 @Injectable({

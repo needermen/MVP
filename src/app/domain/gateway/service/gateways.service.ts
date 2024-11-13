@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {map, of, Observable} from "rxjs";
 import {Gateway} from "../entity/gateway";
 import {environment} from "../../../../environments/environment";
-import { gateways } from 'src/app/constants';
+import { gateways } from '../../../constants';
 
 @Injectable({
   providedIn: 'root'
