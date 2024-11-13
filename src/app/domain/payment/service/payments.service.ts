@@ -14,7 +14,15 @@ export class PaymentsService {
   constructor(private readonly http: HttpClient) {
   }
 
-  get(filter: PaymentFilter): Observable<Payment[]> {
-    return of(payments)
+  get(filters: PaymentFilter): Observable<Payment[]> {
+    return from(payments).pipe(
+      filter(payment => this.applyFilters(payment, filters)),
+      toArray()
+    )
+  }
+
+  private applyFilters(payment: Payment, filters: PaymentFilter): boolean {
+    return payment.projectId == (filters.projectId ? filters.projectId : payment.projectId)
+    && payment.gatewayId == (filters.gatewayId ? filters.gatewayId : payment.gatewayId);
   }
 }
