@@ -4,9 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 export const users = [
   {
     userId: 'user_001',
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com'
+    firstName: 'TBC',
+    lastName: 'Academy',
+    email: 'tbcAcademy.doe@example.com'
   }
 ];
 
